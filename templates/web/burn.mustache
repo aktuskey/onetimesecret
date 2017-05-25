@@ -5,21 +5,21 @@
     {{>partial/session_messages}}
     {{#is_destroyed}}
     <div class="alert alert-error">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Cannot burn!</strong>
+      <button type="button" class="btn-faux" data-dismiss="alert">&times;</button>
+      <h4>Cannot burn!</h4>
       {{#is_received}}The secret has already been viewed ({{received_date}}).{{/is_received}}
       {{#is_burned}}The secret has already been burned ({{burned_date}}).{{/is_burned}}
     </div>
 
-    <a class="btn btn-block btn-large cufon" href="{{metadata_uri}}">Back</a>
+    <a class="main-btn" href="{{metadata_uri}}">Back</a>
     {{/is_destroyed}}
 
 
     {{^is_destroyed}}
     <div class="secret">
-      <span class="pretext">{{i18n.COMMON.secret}}: {{secret_shortkey}}</span>
+      <h2>{{i18n.COMMON.secret}}: {{secret_shortkey}}</h2>
       {{#has_passphrase}}
-      <h2 class="intro cufon">{{i18n.page.requires_passphrase}}</h2>
+      <h2>{{i18n.page.requires_passphrase}}</h2>
       {{/has_passphrase}}
     </div>
 
@@ -31,13 +31,11 @@
           <input type="password" name="passphrase" id="passField" class="input-large" value="" placeholder="Enter the passphrase here" />
         {{/has_passphrase}}
       </div>
-      <button class="btn btn-block btn-large btn-warning cufon" type="submit"><i class="icon-fire"></i> {{i18n.COMMON.word_confirm}}: {{i18n.COMMON.burn_this_secret}}</button>
-      <a class="btn btn-block btn-large cufon" href="{{metadata_uri}}">{{i18n.COMMON.word_cancel}}</a>
+      <button class="main-btn" type="submit"> {{i18n.COMMON.word_confirm}}: {{i18n.COMMON.burn_this_secret}}</button>
+      <a class="btn-faux" href="{{metadata_uri}}">{{i18n.COMMON.word_cancel}}</a>
       <hr/>
-      <p class="hint">{{i18n.COMMON.burn_this_secret_confirm_hint}}</p>
+      <p>{{i18n.COMMON.burn_this_secret_confirm_hint}}</p>
     </form>
     {{/is_destroyed}}
 
   </div>
-
-{{>footer}}

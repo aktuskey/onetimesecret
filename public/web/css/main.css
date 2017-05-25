@@ -71,6 +71,39 @@ fieldset {
   padding: 6px;
 }
 
+a.btn-faux {
+  appearance: button;
+  display: block;
+  font-size: 16px;
+  line-height: normal;
+  margin: 0 auto;
+  background-color: white;
+  padding: 15px 0;
+  color: #cd1820;
+  font-weight: regular;
+  border: none;
+  text-align: center;
+  text-decoration: underline;
+  transition: color ease-in 0.1s;
+  cursor: pointer;
+}
+
+a.main-btn {
+  appearance: button;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #cd1820;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color ease-in 0.2s;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
 .main-btn {
   -webkit-font-smoothing: antialiased;
   width: 100%;
@@ -201,7 +234,7 @@ ul {
   margin: 0;
 }
 
-ul.inner {
+.inner {
   overflow: hidden;
   display: none;
   padding-left: 15px;
